@@ -1,0 +1,40 @@
+[8/12, 10:37 PM] Gaurav: [8/12, 10:26 PM] .: What is data normalisation, what is start schema , what is indexing in sql , what is self join , reverse string in python , what is data warehousing,
+[8/12, 10:27 PM] .: Data normalization in SQL means organizing data in tables to reduce duplicate data and avoid data problems.
+[8/12, 10:28 PM] .: A Star Schema is a way of organizing data into tables for reporting and analytics.
+
+It looks like a star ⭐ because one large fact table sits in the center, surrounded by dimension tables.
+[8/12, 10:30 PM] .: Think of indexing in SQL like the index at the back of a book.
+
+Without an index, MySQL may have to check many/all rows to find what you want. With an index, MySQL can find matching rows much faster.
+[8/12, 10:30 PM] .: Indexing in MySQL is a technique used to make searching and retrieving data from a table faster.
+
+Think of an index like the index page of a book.
+
+Without an index, MySQL may have to look through many rows to find the data.
+[8/12, 10:31 PM] .: CREATE INDEX index_name
+ON table_name(column_name);
+[8/12, 10:33 PM] .: SCD stands for Slowly Changing Dimension. It is mainly a data warehousing concept, not a special SQL command.
+[8/12, 10:33 PM] .: It deals with a simple question:
+
+What should we do when information about a customer/product changes?
+[8/12, 10:34 PM] .: There are 6 commonly discussed types,
+[8/12, 10:38 PM] Gaurav: Type 0 — Keep original
+You never change the original value.
+[8/12, 10:38 PM] Gaurav: Type 1 — Overwrite
+You simply replace the old value.
+[8/12, 10:39 PM] Gaurav: Type 2 — Keep full history ⭐
+This is the most important SCD type for interviews and data warehousing.
+
+Instead of updating the old row, you create a new row.
+[8/12, 10:41 PM] Gaurav: Type 3 — Keep limited history
+Instead of creating a new row, you keep the old value and current value in separate columns.
+[8/12, 10:41 PM] Gaurav: Type 4 — Separate history table
+You keep the current data in one table and historical data in another.
+[8/12, 10:42 PM] Gaurav: Type 6 — Hybrid approach
+Type 6 combines ideas from Type 1 + Type 2 + Type 3.
+
+It can maintain:
+
+Current value
+Previous value
+Historical rows
